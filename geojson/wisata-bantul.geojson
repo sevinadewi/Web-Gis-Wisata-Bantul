@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+  "type": "Feature",
+  "properties": {
+    "nama": "Hutan Pinus Imogiri",
+    "jenis": "Wisata Alam"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [[
+      [110.4225, -7.8890],
+      [110.4235, -7.8895],
+      [110.4245, -7.8892],
+      [110.4252, -7.8899],
+      [110.4250, -7.8907],
+      [110.4240, -7.8910],
+      [110.4230, -7.8912],
+      [110.4220, -7.8907],
+      [110.4215, -7.8900],
+      [110.4225, -7.8890]  
+    ]]
+  }
+},
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Pantai Parangtritis",
+        "jenis": "Pantai"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [110.3305, -8.0248],
+          [110.3330, -8.0252],
+          [110.3328, -8.0270],
+          [110.3304, -8.0265],
+          [110.3305, -8.0248]
+        ]]
+      }
+    }
+  ]
+}
