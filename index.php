@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Topic Listing Bootstrap 5 Template</title>
+        <title>GeoBantul</title>
 
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,7 +113,7 @@ https://templatemo.com/tm-590-topic-listing
                                         
                                     </span>
 
-                                    <input name="keyword" type="search" class="form-control" id="keyword" placeholder="Design, Code, Marketing, Finance ..." aria-label="Search">
+                                    <input name="keyword" type="search" class="form-control" id="keyword" placeholder="Pemandangan, Pantai, Hutan ..." aria-label="Search">
 
                                     <button type="submit" class="form-control">Search</button>
                                 </div>
@@ -144,7 +144,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                     <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
                                 </a> -->
-                                <a href="index.php">
+                                <a href="dashboard/map.php">
                                     <div class="d-flex">
                                         <div>
                                         <h5 class="mb-2">Peta Wisata</h5>
@@ -170,7 +170,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                             <p class="text-white">Menampilkan pemetaan geografis tempat wisata di wilayah Bantul. Website ini memuat informasi, berita serta lokasi tempat wisata di Bantul </p>
 
-                                            <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
+                                            <a href="dashboard/map.php" class="btn custom-btn mt-2 mt-lg-3">Lihat di peta</a>
                                         </div>
 
                                         <span class="badge bg-finance rounded-pill ms-auto">25</span>
@@ -211,7 +211,7 @@ https://templatemo.com/tm-590-topic-listing
                     <div class="row">
 
                         <div class="col-12 text-center">
-                            <h2 class="mb-4">Browse Topics</h1>
+                            <h2 class="mb-4">Jelajahi Tempat</h1>
                         </div>
 
                     </div>
@@ -221,24 +221,24 @@ https://templatemo.com/tm-590-topic-listing
                     <div class="row">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">Design</button>
+                                <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">Pantai</button>
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">Marketing</button>
+                                <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">Hutan</button>
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">Finance</button>
+                                <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">Pemandangan</button>
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">Music</button>
+                                <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">Kerajinan</button>
                             </li>
 
-                            <li class="nav-item" role="presentation">
+                            <!-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">Education</button>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -255,15 +255,15 @@ https://templatemo.com/tm-590-topic-listing
                                                 <a href="topics-detail.html">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">Web Design fdgdgdfg</h5>
+                                                            <h5 class="mb-2">Pantai Pandansari</h5>
 
-                                                            <p class="mb-0">Topic Listing Template based on Bootstrap 5</p>
+                                                            <p class="mb-0">Pantai dengan mercusuar di Sanden Bantul. Dengan deburan ombak yang menenangkan dan suasana yang sejuk</p>
                                                         </div>
 
                                                         <span class="badge bg-design rounded-pill ms-auto">14</span>
                                                     </div>
 
-                                                    <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
+                                                    <img src="img\Pantai-Pandansari.jpg" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -273,15 +273,15 @@ https://templatemo.com/tm-590-topic-listing
                                                 <a href="topics-detail.html">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">Graphic</h5>
+                                                            <h5 class="mb-2">Pantai Goa Cemara</h5>
 
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+                                                                <p class="mb-0">Pantai wisata dengan bukit pasir, yang terkenal dengan konservasi penyu hijau, pasar lokal, dan perkemahan</p>
                                                         </div>
 
                                                         <span class="badge bg-design rounded-pill ms-auto">75</span>
                                                     </div>
 
-                                                    <img src="images/topics/undraw_Redesign_feedback_re_jvm0.png" class="custom-block-image img-fluid" alt="">
+                                                    <img src="img\Pantai-goacemara.jpg" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -291,15 +291,15 @@ https://templatemo.com/tm-590-topic-listing
                                                 <a href="topics-detail.html">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">Logo Design</h5>
+                                                            <h5 class="mb-2">Pantai Cemara Sewu</h5>
 
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+                                                                <p class="mb-0">	Pantai di Kretek. Taman tepi pantai indah dengan pepohonan hijau & bangunan kabana jerami yang populer untuk berfoto.</p>
                                                         </div>
 
                                                         <span class="badge bg-design rounded-pill ms-auto">100</span>
                                                     </div>
 
-                                                    <img src="images/topics/colleagues-working-cozy-office-medium-shot.png" class="custom-block-image img-fluid" alt="">
+                                                    <img src="img\Pantai-cemarasewu.jpg" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -313,15 +313,15 @@ https://templatemo.com/tm-590-topic-listing
                                                     <a href="topics-detail.html">
                                                         <div class="d-flex">
                                                             <div>
-                                                                <h5 class="mb-2">Advertising</h5>
+                                                                <h5 class="mb-2">Hutan Pinus Mangunan</h5>
 
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+                                                                <p class="mb-0">Hutan yang dikelola pemerintah dengan pepohonan Pinus Sumatra menjulang tinggi ke langit.</p>
                                                             </div>
 
                                                             <span class="badge bg-advertising rounded-pill ms-auto">30</span>
                                                         </div>
 
-                                                        <img src="images/topics/undraw_online_ad_re_ol62.png" class="custom-block-image img-fluid" alt="">
+                                                        <img src="img\pinusmangunan.jpg" class="custom-block-image img-fluid" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -331,15 +331,15 @@ https://templatemo.com/tm-590-topic-listing
                                                     <a href="topics-detail.html">
                                                         <div class="d-flex">
                                                             <div>
-                                                                <h5 class="mb-2">Video Content</h5>
+                                                                <h5 class="mb-2">Hutan Pinus Asri</h5>
 
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+                                                                <p class="mb-0">Area mendaki di hutan yang terkenal dengan pohon pinus & tempat untuk berfoto dengan titik pengamatan gunung.</p>
                                                             </div>
 
                                                             <span class="badge bg-advertising rounded-pill ms-auto">65</span>
                                                         </div>
 
-                                                        <img src="images/topics/undraw_Group_video_re_btu7.png" class="custom-block-image img-fluid" alt="">
+                                                        <img src="img\pinusasri.jpg" class="custom-block-image img-fluid" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -349,15 +349,15 @@ https://templatemo.com/tm-590-topic-listing
                                                     <a href="topics-detail.html">
                                                         <div class="d-flex">
                                                             <div>
-                                                                <h5 class="mb-2">Viral Tweet</h5>
+                                                                <h5 class="mb-2">Puncak Pinus Becici</h5>
 
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+                                                                <p class="mb-0">Area hutan dengan dekorasi tempat duduk untuk kesempatan berfoto dengan pemandangan gunung, lembah & kota.</p>
                                                             </div>
 
                                                             <span class="badge bg-advertising rounded-pill ms-auto">50</span>
                                                         </div>
 
-                                                        <img src="images/topics/undraw_viral_tweet_gndb.png" class="custom-block-image img-fluid" alt="">
+                                                        <img src="img\puncakbecici.jpg" class="custom-block-image img-fluid" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -370,20 +370,20 @@ https://templatemo.com/tm-590-topic-listing
                                                 <a href="topics-detail.html">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">Investment</h5>
+                                                            <h5 class="mb-2">Taman Batu Watu Amben</h5>
 
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+                                                            <p class="mb-0">Gardu pandang dengan kedai makanan & panorama lampu kota Yogyakarta & bukit di sekitarnya.</p>
                                                         </div>
 
                                                         <span class="badge bg-finance rounded-pill ms-auto">30</span>
                                                     </div>
 
-                                                    <img src="images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid" alt="">
+                                                    <img src="img/watuamben.jpg" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6 col-md-6 col-12">
+                                        <!-- <div class="col-lg-6 col-md-6 col-12">
                                             <div class="custom-block custom-block-overlay">
                                                 <div class="d-flex flex-column h-100">
                                                     <img src="images/businesswoman-using-tablet-analysis-graph-company-finance-strategy-statistics-success-concept-planning-future-office-room.jpg" class="custom-block-image img-fluid" alt="">
@@ -423,7 +423,7 @@ https://templatemo.com/tm-590-topic-listing
                                                     <div class="section-overlay"></div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
@@ -434,20 +434,20 @@ https://templatemo.com/tm-590-topic-listing
                                                 <a href="topics-detail.html">
                                                     <div class="d-flex">
                                                         <div>
-                                                            <h5 class="mb-2">Composing Song</h5>
+                                                            <h5 class="mb-2">MuseumKu Gerabah Timbul Raharjo Kasongan</h5>
 
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+                                                            <p class="mb-0">Museum kerajinan gerabah</p>
                                                         </div>
 
                                                         <span class="badge bg-music rounded-pill ms-auto">45</span>
                                                     </div>
 
-                                                    <img src="images/topics/undraw_Compose_music_re_wpiw.png" class="custom-block-image img-fluid" alt="">
+                                                    <img src="img\museumku.jpg" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <!-- <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                             <div class="custom-block bg-white shadow-lg">
                                                 <a href="topics-detail.html">
                                                     <div class="d-flex">
@@ -481,7 +481,7 @@ https://templatemo.com/tm-590-topic-listing
                                                     <img src="images/topics/undraw_Podcast_audience_re_4i5q.png" class="custom-block-image img-fluid" alt="">
                                                 </a>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
@@ -538,7 +538,7 @@ https://templatemo.com/tm-590-topic-listing
                     <div class="row">
 
                         <div class="col-12 text-center">
-                            <h2 class="text-white mb-4">How does it work?</h1>
+                            <h2 class="text-white mb-4">Yuk Lihat Wisata di Bantul</h1>
                         </div>
 
                         <div class="col-lg-10 col-12 mx-auto">
@@ -549,9 +549,9 @@ https://templatemo.com/tm-590-topic-listing
                                     </div>
 
                                     <li>
-                                        <h4 class="text-white mb-3">Search your favourite topic</h4>
+                                        <h4 class="text-white mb-3">Jelajahi Peta Wisata</h4>
 
-                                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, cumque magnam? Sequi, cupiditate quibusdam alias illum sed esse ad dignissimos libero sunt, quisquam numquam aliquam? Voluptas, accusamus omnis?</p>
+                                        <p class="text-white">Akses halaman utama dan jelajahi peta interaktif Wisata Kabupaten Bantul.</p>
 
                                         <div class="icon-holder">
                                           <i class="bi-search"></i>
@@ -559,9 +559,9 @@ https://templatemo.com/tm-590-topic-listing
                                     </li>
                                     
                                     <li>
-                                        <h4 class="text-white mb-3">Bookmark &amp; Keep it for yourself</h4>
+                                        <h4 class="text-white mb-3">Bookmark &amp; Filter berdasar layer</h4>
 
-                                        <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis est vel quo, nihil repellat quia velit error modi earum similique odit labore. Doloremque, repudiandae?</p>
+                                        <p class="text-white">Sesuaikan pilihan wisata mu berdasarkan jenis tempat wisata</p>
 
                                         <div class="icon-holder">
                                           <i class="bi-bookmark"></i>
@@ -569,9 +569,9 @@ https://templatemo.com/tm-590-topic-listing
                                     </li>
 
                                     <li>
-                                        <h4 class="text-white mb-3">Read &amp; Enjoy</h4>
+                                        <h4 class="text-white mb-3">Read &amp; Lihat Informasi Detail</h4>
 
-                                        <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi vero quisquam, rem assumenda similique voluptas distinctio, iste est hic eveniet debitis ut ducimus beatae id? Quam culpa deleniti officiis autem?</p>
+                                        <p class="text-white">Klik titik tempat wisata maupun area yang diinginkan untuk melihat deskripsi. Untuk gambar dan informasi lainnya silahkan lihat di halaman utama</p>
 
                                         <div class="icon-holder">
                                           <i class="bi-book"></i>
@@ -592,7 +592,7 @@ https://templatemo.com/tm-590-topic-listing
             </section>
 
 
-            <section class="faq-section section-padding" id="section_4">
+            <!-- <section class="faq-section section-padding" id="section_4">
                 <div class="container">
                     <div class="row">
 
@@ -719,7 +719,7 @@ https://templatemo.com/tm-590-topic-listing
 
                     </div>
                 </div>
-            </section>
+            </section> -->
         </main>
 
 <footer class="site-footer section-padding">
@@ -728,8 +728,7 @@ https://templatemo.com/tm-590-topic-listing
 
                     <div class="col-lg-3 col-12 mb-4 pb-2">
                         <a class="navbar-brand mb-2" href="index.html">
-                            <i class="bi-back"></i>
-                            <span>Topic</span>
+                            <img src="img/logo-hitam.png" alt="" style="">
                         </a>
                     </div>
 

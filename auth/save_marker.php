@@ -19,7 +19,8 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssddsi", $place_name, $category, $latitude, $longitude, $description, $id_user);
 
 if ($stmt->execute()) {
-    echo "Marker berhasil disimpan. <a href='form_marker.php'>Tambah lagi</a>";
+    header("Location: ../dashboard/dashboard.php");
+    exit;
 } else {
     echo "Gagal menyimpan marker: " . $stmt->error;
 }

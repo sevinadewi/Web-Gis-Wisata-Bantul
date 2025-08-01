@@ -1,45 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>WebGIS Bantul</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/leaflet.ajax.js"></script>
+// map.js
 
-  <style>
-    html, body { height: 100%; margin: 0; }
-    #map { width: 100%; height: 100vh; }
-    .legend {
-      position: absolute;
-      bottom: 20px;
-      left: 10px;
-      background: white;
-      padding: 10px;
-      border-radius: 5px;
-      line-height: 1.5;
-      font-size: 14px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    }
-    .legend i {
-      width: 14px;
-      height: 14px;
-      float: left;
-      margin-right: 8px;
-      opacity: 0.7;
-    }
-  </style>
-</head>
-<body>
-
-<div id="map"></div>
-
-<script>
 // Inisialisasi map
-const map = L.map('map').setView([-7.9, 110.4], 10);
+const map = L.map('mapid').setView([-7.9, 110.4], 10);
 
 // Basemap Layer
 const baseLayers = {
@@ -56,7 +18,7 @@ const baseLayers = {
 baseLayers["OpenStreetMap"].addTo(map); // default
 
 // Layer Wilayah
-const bantulLayer = new L.GeoJSON.AJAX(["geojson/id-yo.geojson"], {
+const bantulLayer = new L.GeoJSON.AJAX(["../geojson/id-yo.geojson"], {
   style: function(feature) {
     if (feature.properties && feature.properties.name === "Kabupaten Bantul") {
       return { color: "#EBC005", weight: 2, fillOpacity: 0.4 };
@@ -80,7 +42,8 @@ const wisataAreaLayer = L.geoJSON(null, {
 
     if (jenis.includes("pantai")) color = "#0088cc";
     else if (jenis.includes("hutan")) color = "#228B22";
-    else if (jenis.includes("budaya")) color = "#A52A2A";
+    else if (jenis.includes("pemandangan")) color = "#A52A2A";
+    else if (jenis.includes("kerajinan")) color = "#ab7a11ff";
 
     return {
       color: color,
@@ -94,9 +57,6 @@ const wisataAreaLayer = L.geoJSON(null, {
     layer.bindPopup(`<b>${nama}</b><br>Jenis: ${jenis}`);
   }
 });
-fetch('geojson/wisata-bantul.geojson')
-  .then(res => res.json())
-  .then(data => wisataAreaLayer.addData(data));
 
 // Layer Group untuk Filter
 const wisataLayerGroup = {
@@ -110,30 +70,49 @@ const wisataLayerGroup = {
     style: { color: "#228B22", weight: 2, fillOpacity: 0.4 },
     onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.nama}</b><br>Jenis: ${f.properties.jenis}`)
   }),
-  "Budaya": L.geoJSON(null, {
-    filter: f => f.properties.jenis.toLowerCase().includes("budaya"),
+  "Pemandangan": L.geoJSON(null, {
+    filter: f => f.properties.jenis.toLowerCase().includes("pemandangan"),
     style: { color: "#A52A2A", weight: 2, fillOpacity: 0.4 },
+    onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.nama}</b><br>Jenis: ${f.properties.jenis}`)
+  }),
+  "Kerajinan": L.geoJSON(null, {
+    filter: f => f.properties.jenis.toLowerCase().includes("kerajinan"),
+    style: { color: "#ab7a11ff", weight: 2, fillOpacity: 0.4 },
     onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.nama}</b><br>Jenis: ${f.properties.jenis}`)
   })
 };
 
-// Load GeoJSON ke semua layer wisata filter
-fetch('geojson/wisata-bantul.geojson')
+// Load GeoJSON ke semua layer wisata
+fetch('../geojson/wisata-bantul.geojson?' + new Date().getTime())
   .then(res => res.json())
   .then(data => {
+    wisataAreaLayer.addData(data);
     Object.values(wisataLayerGroup).forEach(l => l.addData(data));
   });
 
-fetch("auth/get_markers.php")
+// Load marker dari PHP
+fetch("../auth/get_markers.php")
   .then(res => res.json())
   .then(data => {
     data.forEach(marker => {
-      L.marker([marker.latitude, marker.longitude])
-        .addTo(map)
-        .bindPopup(`<b>${marker.place_name}</b><br>${marker.description}`);
+      // L.marker([marker.latitude, marker.longitude])
+      //   .addTo(map)
+      //   .bindPopup(`<b>${marker.place_name}</b><br>${marker.description}`);
+      const name = marker.place_name || 'Nama tidak tersedia';
+  const description = marker.description || 'Tidak ada deskripsi';
+  const category = marker.category || 'Kategori tidak tersedia';
+
+  const popupContent = `
+    <b>${name}</b><br>
+    <i>${category}</i><br>
+    ${description}
+  `;
+
+  L.marker([marker.latitude, marker.longitude])
+    .addTo(map)
+    .bindPopup(popupContent);
     });
   });
-
 
 // Layer Control
 const overlayLayers = {
@@ -141,9 +120,9 @@ const overlayLayers = {
   "Semua Area Wisata": wisataAreaLayer,
   "Pantai": wisataLayerGroup["Pantai"],
   "Hutan": wisataLayerGroup["Hutan"],
-  "Budaya": wisataLayerGroup["Budaya"]
+  "Pemandangan": wisataLayerGroup["Pemandangan"],
+  "Kerajinan": wisataLayerGroup["Kerajinan"]
 };
-
 L.control.layers(baseLayers, overlayLayers).addTo(map);
 
 // Legend
@@ -153,11 +132,59 @@ legend.onAdd = function () {
   div.innerHTML += "<b>Legenda Wisata</b><br>";
   div.innerHTML += '<i style="background:#0088cc"></i> Pantai<br>';
   div.innerHTML += '<i style="background:#228B22"></i> Hutan<br>';
-  div.innerHTML += '<i style="background:#A52A2A"></i> Budaya<br>';
+  div.innerHTML += '<i style="background:#A52A2A"></i> Pemandangan<br>';
+  div.innerHTML += '<i style="background:#ab7a11ff"></i> Kerajinan<br>';
   return div;
 };
 legend.addTo(map);
-</script>
 
-</body>
-</html>
+// Fungsi Geolokasi
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    alert('Your device does not support geolocation.');
+  }
+}
+
+function showPosition(data) {
+  const latInput = document.getElementById('latitude');
+  const lonInput = document.getElementById('longitude');
+  if (latInput && lonInput) {
+    latInput.value = data.coords.latitude;
+    lonInput.value = data.coords.longitude;
+  }
+}
+
+function showError(error) {
+  let error_message = '';
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      error_message = "User denied the request for Geolocation.";
+      break;
+    case error.POSITION_UNAVAILABLE:
+      error_message = "Location information is unavailable.";
+      break;
+    case error.TIMEOUT:
+      error_message = "The request to get user location timed out.";
+      break;
+    case error.UNKNOWN_ERROR:
+      error_message = "An unknown error occurred.";
+      break;
+  }
+  alert(error_message);
+}
+
+let detailMarker;
+function showMap(latitude, longitude, name, address) {
+  if (detailMarker) {
+    map.removeLayer(detailMarker);
+  }
+  map.setView([latitude, longitude], 15);
+  detailMarker = L.marker([latitude, longitude]).addTo(map)
+    .bindPopup(`<b>${name}</b><br>${address}`)
+    .openPopup();
+}
+
+// Panggil geolocation otomatis
+getLocation();

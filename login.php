@@ -31,7 +31,7 @@
       <div class="front">
         <img src="img/mangunan2.jpg" alt="">
         <div class="text">
-          <span class="text-1">Every new friend is a <br> new adventure</span>
+          <span class="text-1">Cari Destinasi Wisatamu<br> di Wilayah Bantul</span>
           <span class="text-2">Let's get connected</span>
         </div>
       </div>
